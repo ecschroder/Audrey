@@ -99,10 +99,13 @@ div.social-media {
   -o-transition: opacity 0.5s;
   /* Opera */
   display: inline-block;
-  height: 57px;
-  width: 57px;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  padding: 57px 0 0 57px;
   opacity: 0.5;
-  margin-left: 16px; }
+  margin-left: 16px;
+  text-indent: -9999px; }
 
 .social-media a:hover {
   opacity: 1; }
@@ -153,8 +156,7 @@ html[xmlns] .clearfix {
     width: 418px; }
 
   .social-media a {
-    height: 32px;
-    width: 32px; }
+    padding: 32px 0 0 32px; }
 
   a#facebook {
     background: url("img/facebook-32.png"); }

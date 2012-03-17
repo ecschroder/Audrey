@@ -136,10 +136,13 @@ div.social-media {
     @include transition(opacity);
 
     display: inline-block;
-    height: 57px;
-    width: 57px;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    padding: 57px 0 0 57px;
     opacity: 0.5;
     margin-left: $padding;
+    text-indent: -9999px;
 
 }
 
@@ -191,7 +194,7 @@ html[xmlns] .clearfix {
     #contain { width: $contain-width/2; }
     #inner-contain { width: $contain-width/2 - $padding*2; }
 
-    .social-media a { height: 32px; width: 32px; }
+    .social-media a { padding: 32px 0 0 32px; }
 
     a#facebook { background: url('img/facebook-32.png'); }
 
