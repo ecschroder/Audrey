@@ -1,0 +1,202 @@
+/* style.scss */
+
+
+
+$dark: #000;
+$light: #fff;
+
+$green: #7ca15a;
+$gray: #aaa;
+
+$padding: 16px;
+
+$contain-width: 900px;
+$contain-height: 600px;
+
+
+@mixin transition($property) {
+    transition: $property .5s;
+    -moz-transition: $property .5s; /* Firefox 4 */
+    -webkit-transition: $property .5s; /* Safari and Chrome */
+    -o-transition: $property .5s; /* Opera */
+}
+
+
+
+
+body {
+    color: $gray;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    padding: 10px;
+
+    background-image: url('img/square-bg.png'),  linear-gradient(bottom, rgb(134,174,97) 15%, rgb(172,204,142) 76%, rgb(162,194,117) 100%);
+    background-image: url('img/square-bg.png'),  -o-linear-gradient(bottom, rgb(134,174,97) 15%, rgb(172,204,142) 76%, rgb(162,194,117) 100%);
+    background-image: url('img/square-bg.png'),  -moz-linear-gradient(bottom, rgb(134,174,97) 15%, rgb(172,204,142) 76%, rgb(162,194,117) 100%);
+    background-image: url('img/square-bg.png'),  -webkit-linear-gradient(bottom, rgb(134,174,97) 15%, rgb(172,204,142) 76%, rgb(162,194,117) 100%);
+    background-image: url('img/square-bg.png'),  -ms-linear-gradient(bottom, rgb(134,174,97) 15%, rgb(172,204,142) 76%, rgb(162,194,117) 100%);
+    background-image: url('img/square-bg.png'),  -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.15, rgb(134,174,97)),
+        color-stop(0.76, rgb(172,204,142)),
+        color-stop(1, rgb(162,194,117))
+    );
+
+}
+
+#contain {
+    @include transition(width);
+
+    height: $contain-height;
+    width: $contain-width;
+
+    background: rgba(255,255,255,0.5);
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+
+    margin: 4% auto;
+    padding: $padding;
+
+}
+
+#inner-contain {
+    @include transition(width);
+
+    background: rgba(255,255,255,0.5) url('img/light-wool.png') 0 0 repeat;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 5px;
+
+    height: $contain-height - $padding*2;
+    width: $contain-width - $padding*2;
+
+    margin: 0 auto;
+    padding: $padding;
+}
+
+h1 {
+    color: darken($gray, 29%);
+    font-size: 3em;
+    line-height: 1.5em;
+}
+
+p {
+    font-size: 1.4em;
+    font-weight: lighter;
+    margin: 1em 0;
+}
+
+a {
+    @include transition(color);
+    color: darken($gray, 9%);
+    text-decoration: none;
+}
+
+a:hover {
+    color: darken($gray, 40%);
+}
+
+
+hr {
+    border: 0;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    height: 1px;
+}
+
+
+.pull-left {
+    float: left;
+    text-align: left;
+}
+
+.pull-right {
+    float: right;
+    text-align: right;
+}
+
+
+
+
+
+/*
+icons by BuildInternet
+http://buildinternet.com/2010/07/sketchy-social-media-icons-freebie/
+*/
+
+div.social-media {
+    padding: 1.5em 0;
+}
+
+.social-media a {
+
+    @include transition(opacity);
+
+    display: inline-block;
+    height: 57px;
+    width: 57px;
+    opacity: 0.5;
+    margin-left: $padding;
+
+}
+
+.social-media a:hover {
+    opacity: 1;
+}
+
+
+a#facebook { background: url('img/facebook-57.png'); }
+
+a#twitter { background: url('img/twitter-57.png'); }
+
+a#linkedin { background: url('img/linkedin-57.png'); }
+
+
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+
+
+
+@media (max-width: 950px) {
+    p { font-size: 1.2em; }
+    #contain { width: $contain-width/1.5; }
+    #inner-contain { width: $contain-width/1.5 - $padding*2; }
+}
+
+@media (max-width: 700px) {
+    p { font-size: 1em; }
+    #contain { width: $contain-width/2; }
+    #inner-contain { width: $contain-width/2 - $padding*2; }
+
+    .social-media a { height: 32px; width: 32px; }
+
+    a#facebook { background: url('img/facebook-32.png'); }
+
+    a#twitter { background: url('img/twitter-32.png'); }
+
+    a#linkedin { background: url('img/linkedin-32.png'); }
+
+}
+
